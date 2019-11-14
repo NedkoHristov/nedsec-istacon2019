@@ -28,3 +28,8 @@ volumes:
     driver: local
   wordpress_data:
     driver: local
+
+
+# Wordpress username - user
+# Wordpress password - bitnami
+# Bitnami repo - https://github.com/bitnami/bitnami-docker-wordpress
