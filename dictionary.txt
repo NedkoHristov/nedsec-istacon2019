@@ -4,3 +4,4 @@ test
 nedko
 bitnami
 user
+password

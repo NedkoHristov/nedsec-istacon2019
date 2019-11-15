@@ -9,6 +9,7 @@ services:
       - MARIADB_DATABASE=bitnami_wordpress
       - ALLOW_EMPTY_PASSWORD=yes
   wordpress:
+# What can go wrong using 2015 WP...
     image: 'bitnami/wordpress:4.3.1-1'
     ports:
       - '80:80'
