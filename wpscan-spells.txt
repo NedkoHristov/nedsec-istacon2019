@@ -1,0 +1,6 @@
+Scan local WP instance
+
+wpscan --url http://localhost/ --enumerate u --api-token DMmsAXJ7zykVUUV57htIm3HbVxmmgtaj4T4mQWEUaPo
+
+Dictionary attack
+wpscan –url http://localhost –wordlist dictionary.txt –username admin

@@ -1,0 +1,6 @@
+admin
+test
+123
+nedko
+bitnami
+user
