@@ -5,5 +5,5 @@ nedko
 bitnami
 user
 password
-kochan
+123456
 
