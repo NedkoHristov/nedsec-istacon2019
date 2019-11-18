@@ -5,7 +5,7 @@ docker run hello-world
 
 2. Docker compose spelling
 
-3. Install DVWA
+3. Install DVWA - https://hub.docker.com/r/vulnerables/web-dvwa/
 docker pull vulnerables/web-dvwa
 
 4. Run DVWA @ port 666
@@ -45,3 +45,5 @@ wpscan --url http://localhost/ --enumerate u --api-token DMmsAXJ7zykVUUV57htIm3H
 
 Dictionary attack
 wpscan –url http://localhost –wordlist dictionary.txt –username admin
+
+wpscan --url http://localhost --passwords dictionary.txt --password-attack wp-login --enumerate u --api-token DMmsAXJ7zykVUUV57htIm3HbVxmmgtaj4T4mQWEUaPo
